@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+.App {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+html{
+  height: 100%;
+}
+body{
+  /* background-color: #050819; */
+  font-family: 'DM Sans';
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2F4465; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #213350; 
+}
+
+#root {
+  font-size: 16px;
+  background-color: rgba(63, 19, 113, 1);
+}  
+
+#header-background {
+  height: auto;
+  max-height : 100%;
+  background-color: rgba(63, 19, 113, 1);
+  background-repeat: no-repeat;
+  background-size: cover;
+}  
+
+#body {
+  height: auto;
+  max-height : 100%;
+  background-color: rgba(63, 19, 113, 1);
+  background-repeat: no-repeat;
+  background-size: cover;
+}  
