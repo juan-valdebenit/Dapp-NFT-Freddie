@@ -9,7 +9,6 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import { BiCopy, BiLinkExternal , BiLogOut,BiLogOutCircle} from "react-icons/bi";
-import {ownerAddress} from "./config";
 import CircularProgress from '@mui/material/CircularProgress';
 
 class Header extends React.Component {
@@ -126,20 +125,6 @@ class Header extends React.Component {
               <MenuItem onClick = {()=> {this.copyAddress()}}><BiCopy/> &nbsp; Copy Address</MenuItem>
               <MenuItem onClick=  {()=> {this.goToLink()}}><BiLinkExternal/> &nbsp; View in Explorer</MenuItem>
               <MenuItem onClick=  {()=>{this.props.walletDisconnect();this.setState({ anchorEl: null});}}><BiLogOut/> &nbsp; Disconnect</MenuItem>
-              {this.props.linkedAccount === ownerAddress && (<MenuItem onClick=  {()=>{this.props.withdrawAll()}}><BiLogOutCircle/> &nbsp; 
-              Withdraw All {this.props.withdrawAllLoading && (
-                      <CircularProgress
-                        size={24}
-                        sx={{
-                          color: "#ffffff",
-                          position: 'absolute',
-                          top: '50%',
-                          left: '50%',
-                          marginTop: '-12px',
-                          marginLeft: '-12px',
-                        }}
-                      />
-                    )}</MenuItem>)}
             </Menu>
           </Toolbar>
         </AppBar>
