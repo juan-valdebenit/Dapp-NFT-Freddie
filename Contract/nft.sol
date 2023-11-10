@@ -1219,13 +1219,11 @@ abstract contract Ownable is Context {
 contract FreddiesCrew is Ownable, ERC721A, ReentrancyGuard {
   uint256 public immutable maxPerAddressDuringMint;
   uint256 public  PRICE = 0.04 ether;
-  string private _baseTokenURI;
+  string private _baseTokenURI = " ipfs://bafybeieynbywgq6tuulbjm4yyagowxn5nkeo7heozx6kcernw3rtu53the/json/1.json";
 
   constructor(
-    uint256 maxBatchSize_,
-    uint256 collectionSize_
-  ) ERC721A("FreddiesCrew", "FDC", maxBatchSize_, collectionSize_) {
-    maxPerAddressDuringMint = maxBatchSize_;
+  ) ERC721A("FreddiesCrew", "FDC", 10, 3000) {
+    maxPerAddressDuringMint = 10;
   }
 
   modifier callerIsUser() {

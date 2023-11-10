@@ -9,7 +9,11 @@ html{
 }
 body{
   /* background-color: #050819; */
-  font-family: 'DM Sans';
+  font-family: 'Pompiere', serif;
+}
+
+header {
+  font-family: 'Pompiere', serif;
 }
 /* width */
 ::-webkit-scrollbar {

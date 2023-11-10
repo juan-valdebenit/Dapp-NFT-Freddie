@@ -1,7 +1,14 @@
 import "./App.css";
 import React from "react";
 import Header from "./components/Header";
-import { Box , Button, Slider} from "@mui/material";
+import { Box , Button, Slider, BottomNavigation, BottomNavigationAction } from "@mui/material";
+import Instagram from '@mui/icons-material/Instagram';
+import Twitter from '@mui/icons-material/Twitter';
+import Language from '@mui/icons-material/Language';
+import ThreeDRotation from '@mui/icons-material/ThreeDRotation';
+import { BsDiscord } from "react-icons/bs";
+
+
 import Web3 from "web3";
 import { ethers } from "ethers";
 import {
@@ -245,31 +252,31 @@ class App extends React.Component {
                 <Box
                   component="img"
                   src="/left.png"
-                  sx={{ width: "100%", height: "auto", marginBottom : "0px", marginTop : "100px"}}
+                  sx={{ width: "100%", height: "auto", marginBottom : "0px", marginTop : "10vh"}}
                 />
                 <div style={{backgroundColor : "#000000"}}>
-                  <h6 style={{fontSize : "2em", color : "#ffffff", margin : "0.1em"}}>Supply : 2000</h6>
-                  <h6 style={{fontSize : "2em", color : "#ffffff", margin : "0.1em"}}>Price : 0.04 ETH</h6>
+                  <h6 style={{fontSize : "2vw", color : "#ffffff", margin : "0.1em"}}>Supply : 2000</h6>
+                  <h6 style={{fontSize : "2vw", color : "#ffffff", margin : "0.1em"}}>Price : 0.04 ETH</h6>
                 </div>
             </div>
 
-            <div style={{ width: "56%", paddingTop : "7em" }}>
+            <div style={{ width: "56%", paddingTop : "10vh" }}>
 
-              <h6 style={{fontSize : "2.8em", color : "#ffffff", margin : "0.1em"}}>Freddie’s Crew Mint</h6> <br/>
-              <h6 style={{fontSize : "1.6em", color : "#ffffff", margin : "0.1em", paddingLeft : "2em", paddingRight: "2em"}}>When you own a Freddie's Crew NFT, you are holding an identity proving your membership in the Crew. Being part of the Crew will keep give you exclusive access to The Basement.</h6>
+              <h6 style={{fontSize : "2.8vw", color : "#ffffff", margin : "0.1em"}}>Freddie’s Crew Mint</h6> <br/>
+              <h6 style={{fontSize : "1.6vw", color : "#ffffff", margin : "0.1em", paddingLeft : "2em", paddingRight: "2em"}}>When you own a Freddie's Crew NFT, you are holding an identity proving your membership in the Crew. Being part of the Crew will keep give you exclusive access to The Basement.</h6>
               <br/>
-              <h6 style={{fontSize : "1.6em", color : "#ffffff", margin : "0.1em", paddingLeft : "2em", paddingRight: "2em"}}>Each member of Freddie's Crew is programmed and generated from around 70 traits through different layers. While each member of the Crew is unique, some traits are programmed to be rarer than others</h6>
+              <h6 style={{fontSize : "1.6vw", color : "#ffffff", margin : "0.1em", paddingLeft : "2em", paddingRight: "2em"}}>Each member of Freddie's Crew is programmed and generated from around 70 traits through different layers. While each member of the Crew is unique, some traits are programmed to be rarer than others</h6>
               <br/>
-              <h6 style={{fontSize : "2.2em", color : "#ffffff", margin : "0.1em", paddingLeft : "2em", paddingRight: "2em"}}>{this.state.mintedAmount} / 2000 Minted</h6>
-              <div>
+              <h6 style={{fontSize : "2.2vw", color : "#ffffff", margin : "0.1em", paddingLeft : "2em", paddingRight: "2em"}}>{this.state.mintedAmount} / 2000 Minted</h6>
+              <div><br/>
               <Slider
                 aria-label="Small steps"
                 defaultValue={1}
                 step={1}
                 marks
                 min={1}
-                max={4}
-                valueLabelDisplay="aonuto"
+                max={10}
+                valueLabelDisplay="on"
                 style={{width : "50%"}}
                 onChange={handleMintNumber}
               /><br/>
@@ -281,11 +288,25 @@ class App extends React.Component {
               <Box
                 component="img"
                 src="/right.png"
-                sx={{ width: "100%", height: "auto" ,marginTop : "100px"}}
+                sx={{ width: "100%", height: "auto" ,marginTop : "10vh"}}
               />
             </div>
             <div style={{ width: "3%" }}></div>
           </div>
+
+          <div>
+            
+          </div>
+          <BottomNavigation
+            showLabels
+            style={{backgroundColor : "rgba(63, 19, 113, 1)", margin : "5vh"}}
+          >
+            <BottomNavigationAction label="Instagram" href = "https://www.instagram.com/freddiescrew/" target = "_blank" color="secondary" style = {{color : "white"}} icon={<Instagram  style={{color : "white"}} fontSize="large"/>} />
+            <BottomNavigationAction label="Twitter"   href = "https://www.twitter.com/freddies_Crew" target = "_blank" color="secondary" style = {{color : "white"}} icon={<Twitter    style={{color : "white"}} fontSize="large"/>} />
+            <BottomNavigationAction label="Website"   href = "https://www.freddiescrew.com" target = "_blank" color="secondary" style = {{color : "white"}} icon={<Language   style={{color : "white"}} fontSize="large"/>} />
+            <BottomNavigationAction label="Discord"   href = "https://discord.gg/freddiescrew" target = "_blank" color="secondary" style = {{color : "white"}} icon={<BsDiscord   style={{color : "white"}} fontSize="33px"/>} />
+          </BottomNavigation>
+
         </Box>
       </div>
     );
